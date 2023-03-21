@@ -1,8 +1,7 @@
 const showIdea = document.querySelector(".show-idea"); //will create list and show ideas here
 let btns = document.querySelectorAll("#btn");
-const randomPics = document.querySelector(".random-pics"); //will put random pics here
-const selectPicNum = document.querySelector(".num-pics"); //user chooses how many pics to see
-//let breedNameDisp = document.querySelector('.breed-name');
+const randomJokes = document.querySelector(".random-jokes"); //will put random jokes here
+const selectJokeNum = document.querySelector(".num-jokes"); //user chooses how many jokes to see
 
 // IDEA GENERATOR HERE
 // user clicks on activity button - html in <p> is cleared
@@ -42,49 +41,62 @@ const displayIdea = function(res){
             <p class='idea'>${activity}</p>
         </div>
         `;
-    // const ideaDiv = document.createElement("div");
-    //     ideaDiv.innerHTML = `
-    //     <div class="idea">
-    //         <p>You could:  ${activity}</p>
-    //     </div>
-    //     `;
-
-     //   showIdea.append(ideaDiv);
 }
 
 
 
 
-// PIC GENERATOR HERE
+// JOKE GENERATOR HERE
 //user selects a number from selector
-//query is run & num of pics returned
-//div is populated with num of pics
+//query is run & num of jokes returned
+//div is populated with num of jokes
 
-// const getData = async function(numCats){
-//     const catsRequest = await fetch(`https://api.thecatapi.com/v1/images/search?limit=${numCats}&api_key=live_WwThoDpHXktwq1gdKW0d1FpOAnLe9Fv1S1O0nwGc9Gf9VCs8mLIraQ3RRZBwEStD`);
-//     const data = await catsRequest.json();
-//     console.log(data);
-//     displayCats(data);
-// }
-// getData(0);
 
-// const displayCats = function(data){
-//     randomCats.innerHTML = "";
-//     for(let cat of data) {
-//         // let country = user.location.country;
-//         // let name = user.id.name;
-//         let imageURL = cat.url;
-//         const catDiv = document.createElement("div");
-//         catDiv.innerHTML = `
+const getJokes = async function(numJokes){
+    const jokeRequest = await fetch(`https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single&lang=en&amount=${numJokes}`);
+    const data = await jokeRequest.json();
+    console.log(data);
+    displayJokes(data);
+}
+// getJokes(0);
 
-//             <img width=200px height=200px src=${imageURL} alt="cat pic" />
-//         `;
-//         randomCats.append(catDiv);
-//     }
-// }
+const displayJokes = function(data){
+    randomJokes.innerHTML = "";
 
-// selectCatNum.addEventListener('change', function(e){
-//     const numCats = e.target.value;
-//     getData(numCats);
-// });
+    for(let joke of data){
+        const thisJoke = data.joke;
+        console.log(thisJoke);
+
+        let jokeDiv = document.createElement("div");
+        jokeDiv.innerHTML = `
+        <div>
+            <p>${thisJoke}</p>
+
+        </div>
+        `;
+        randomJokes.append(jokeDiv);
+    }
+
+
+
+    // dataArr.forEach((joke) => {
+    //     let tellJoke = joke.jokes.joke;
+    //     console.log(tellJoke);
+    //     let jokeDiv = document.createElement("div");
+    //     jokeDiv.innerHTML = `
+    //     <div>
+    //         <p>${tellJoke}</p>
+
+    //     </div>
+    //     `;
+    // randomJokes.append(jokeDiv);
+
+    // });
+        
+}
+
+selectJokeNum.addEventListener('change', function(e){
+    const numJokes = e.target.value;
+    getJokes(numJokes);
+});
 

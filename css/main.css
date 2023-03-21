@@ -38,7 +38,7 @@
     border: 3px solid #64348a;
   }
   
-  .pic-container {
+  .joke-container {
     display: flex;
     justify-content: center;
     align-content: center;
@@ -50,7 +50,7 @@
     border-radius: 10px;
   }
   
-  .num-pics {
+  .num-jokes {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -58,7 +58,7 @@
     padding: 15px;
   }
   
-  .random-pics div {
+  .random-jokes div {
     flex-basis: 250px;
     text-align: center;
     padding: 0.5em;
@@ -69,24 +69,16 @@
     box-shadow: 5px 5px 18px 5px rgba(0, 0, 0, 0.377);
   }
   
-  .num-pics label {
+  .num-jokes label {
     font-size: 1.25em;
     color:#e15554;
+    padding: 0 15px;
   }
 
   .idea {
     font-family: 'Bubblegum Sans';
     font-size: 1.5em;
     color:#64348a;
-  }
-  
-  #users, #breeds {
-    margin: 0 0.75em;
-    padding: 0.5em;
-    color: #64348a;
-    font-weight: bold;
-    font-size: 1em;
-    font-family: 'Open Sans', sans-serif;
   }
   
   .idea-container {
@@ -149,7 +141,3 @@
     margin: -1px; padding: 0; border: 0; 
   }
 
-  .breed-pic {
-    padding: 8px;
-    margin: 15px;
-  }
