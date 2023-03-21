@@ -10,13 +10,21 @@ const selectPicNum = document.querySelector(".num-pics"); //user chooses how man
 //idea is listed below the buttons - create <p> element, populate it with query result
 
 //FUNCTION TO GET DATA FROM API
+
+btns.forEach(function(i){
+    i.addEventListener('click', function(e){
+        const ideaType = e.target.value;
+        console.log(ideaType);
+        getIdea(ideaType);
+    });
+});
+
 const getIdea = async function(ideaType){
     const ideaRequest = await fetch(`http://www.boredapi.com/api/activity?type=${ideaType}`);
     const res = await ideaRequest.json();
-    //console.log(res);
     displayIdea(res);
 }
-getIdea();
+//getIdea();
 
 //FUNCTION TO SHOW IDEA BELOW BUTTONS
 //grab the response from the query
@@ -27,8 +35,13 @@ const displayIdea = function(res){
     let activity = res.activity
     console.log(activity);
 
-    showIdea.classList.remove("hide");
-    showIdea.innerHTML = `<p class='idea'>You could: <br> ${activity}</p>`;
+    //showIdea.classList.remove("visuallyhidden");
+    showIdea.innerHTML = `
+        <div>
+            <h3 >You could: </h3>
+            <p class='idea'>${activity}</p>
+        </div>
+        `;
     // const ideaDiv = document.createElement("div");
     //     ideaDiv.innerHTML = `
     //     <div class="idea">
@@ -39,16 +52,7 @@ const displayIdea = function(res){
      //   showIdea.append(ideaDiv);
 }
 
-btns.forEach(function(i){
-    i.addEventListener('click', function(e){
-        const ideaType = e.target.value;
-        console.log(ideaType);
 
-        // showIdea.classList.remove("hide");
-        // showIdea.innerText = `You could: ${ideaType}'s`;
-        getIdea(ideaType);
-    });
-})
 
 
 // PIC GENERATOR HERE

@@ -8,10 +8,6 @@
     text-align: center;
   }
   
-  .hide {
-    display: none;
-  }
-  
   h1 {
     padding: 0.5em;
     font-size: 4em;
@@ -26,6 +22,15 @@
     font-family: 'Bubblegum Sans';
     color: #64348a;
     margin: 10px 3px;
+  }
+
+  h3 {
+    padding: 0.5em;
+    font-size: 1.25em;
+    font-family: 'Open Sans', sans-serif;
+    color: #e15554;
+    margin: 0;
+    font-style: italic;
   }
   
   img {
@@ -64,9 +69,15 @@
     box-shadow: 5px 5px 18px 5px rgba(0, 0, 0, 0.377);
   }
   
-  .idea, .num-pics label {
+  .num-pics label {
     font-size: 1.25em;
-    color:#e15554
+    color:#e15554;
+  }
+
+  .idea {
+    font-family: 'Bubblegum Sans';
+    font-size: 1.5em;
+    color:#64348a;
   }
   
   #users, #breeds {
@@ -127,8 +138,17 @@
     justify-content: center;
     align-items: center;
     flex-flow: row wrap;
+    border: none;
   }
   
+  .visuallyhidden { 
+    position: absolute; 
+    overflow: hidden; 
+    clip: rect(0 0 0 0); 
+    height: 1px; width: 1px; 
+    margin: -1px; padding: 0; border: 0; 
+  }
+
   .breed-pic {
     padding: 8px;
     margin: 15px;
