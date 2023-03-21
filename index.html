@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>What to Do?</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="js/script.js" defer></script>
+  </head>
+
+  <body>
+    <div class="main">
+      <h1>I'm Bored - What Should I Do?</h1>
+
+      <div class="idea-container">
+        <h2>Give Me An Idea!</h1>
+          <div class="idea-select">
+            <button id="btn" value="recreational" type="recreational">Recreation</button>
+            <button id="btn" value="social" type="social">Social</button>
+            <button id="btn" value="relaxation" type="relaxation">Relaxation</button>
+            <button id="btn" value="cooking" type="cooking">Cooking</button>
+            <button id="btn" value="music" type="music">Music</button>
+          </div>
+          <div class="show-idea hide"></div>
+      </div>
+
+      <div class="pic-container">
+        <h2>Show Me A Random Picture </h2>
+        <div class="num-pics">
+          <label for="pics">How many pictures would you like to see?</label>
+          <select name="pics" id="pics">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </div>
+        <div class="random-pics"></div>
+      </div>
+      
+    </div>
+  </body>
+</html>
+
